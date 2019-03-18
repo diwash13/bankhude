@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 import './App.css'
-import { HashRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import store from '../src/ducks/store'
+import Footer from './components/Footer/Footer'
 import routes from './Routes/Routes'
-// import Private from './components/Private/'
+import Nav from './components/Nav/Nav'
+import { withRouter } from 'react-router-dom'
 
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <HashRouter>
 
-          <div className="App">{routes}</div>
-        </HashRouter>
-      </Provider>
+          <div className="App">
+          <Nav location={this.props.location}/>
+          <Footer location={this.props.location}/>
+          <div className='routes'>{routes}</div>
+          </div>
+        
     );
   }
 }
 
-export default App
+export default withRouter(App)

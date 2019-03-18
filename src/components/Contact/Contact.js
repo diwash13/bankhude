@@ -1,11 +1,15 @@
 import React from 'react'
-import Nav from '../Nav/Nav'
 
 export default function Contact() {
     return (
         <div>
-            <Nav />
             Contact
+            <div>
+          <div className='left'></div>
+          <div className='right'></div>
+        </div>
+        <footer className='footer'>
+        </footer>
         </div>
     )
 }

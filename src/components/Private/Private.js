@@ -3,10 +3,8 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { updateUser, clearUser } from '../../ducks/reducer'
 import "./Private.css";
-import { Logo } from "../Logo/Logo";
-// import { Link } from 'react-router-dom'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
+import Logo from "../Logo/Logo";
+import {Link} from 'react-router-dom'
 
 class Private extends Component {
   componentDidMount() {
@@ -32,18 +30,19 @@ class Private extends Component {
     const { username } = this.props;
     return (
       <div>
+        {!username ? 
+        <Link to='/dashboard'>LogIn / Register</Link> :
         <div className='logout'>
           <div className='logo'><Logo /></div>
-          <h5>Welcome {username}</h5>
+          <h5 className='welcome'>Welcome {username}</h5>
           <button className='button' onClick={this.logout}>Logout</button>
         </div>
-        <Nav />
+        }
         <div>
           <div className='left'></div>
           <div className='right'></div>
         </div>
         <footer className='footer'>
-          <Footer />
         </footer>
       </div>
     );

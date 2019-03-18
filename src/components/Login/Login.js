@@ -5,12 +5,14 @@ import { updateUser } from "./../../ducks/reducer"
 // import '../Css/Dashboard.css'
 
 
+
+
 class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
       username: "",
-      password: "",
+      password: ""
     }
   }
   componentDidMount() {
@@ -23,6 +25,7 @@ class Login extends Component {
       try {
         let res = await axios.get("/api/current")
         this.props.updateUser(res.data)
+        console.log(res.data)
         this.props.history.push('/private')
       } catch (err) {
       }
@@ -35,7 +38,8 @@ class Login extends Component {
       [prop]: val
     })
   }
-  login = async () => {
+  login = async (e) => {
+    e.preventDefault()
     let user = {
       username: this.state.username,
       password: this.state.password
@@ -51,7 +55,7 @@ class Login extends Component {
   render() {
     const { username, password } = this.state
     return (
-      <div className='inner-container'>
+      <form className='inner-container' onSubmit={this.login}>
         <div className='header'></div>
             <div className='box'>
             <div className='input-group'>
@@ -70,12 +74,13 @@ class Login extends Component {
                 onChange={e => this.handleChange("password", e.target.value)}
                 />
             </div>
+            
         <button 
           type='button'
           className='login-btn'
-          onClick={this.login}>Login</button>
+          type='submit'>Login</button>
         </div>
-      </div>
+      </form>
     )
   }
 }

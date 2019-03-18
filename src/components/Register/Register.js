@@ -11,6 +11,10 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
+      first_name: '',
+      last_name: '',
+      email: '',
+      phone: ''
     }
 
     this.register = this.register.bind(this)
@@ -40,7 +44,11 @@ class Login extends Component {
   async register() {
     let user = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      email: this.state.email,
+      phone: this.state.phone
     }
     try {
       let res = await axios.post("/auth/register", user)
@@ -51,16 +59,36 @@ class Login extends Component {
     }
   }
   render() {
-    const { username, password } = this.state
+    const { username, password, first_name, last_name, email, phone } = this.state
     return (
       <div className='inner-container'>
         <div className='header'></div>
             <div className='box'>
             <div className='input-group'>
+            <label>First Name</label>
+            <input className='input'
+                value={first_name}
+                onChange={e => this.handleChange("first_name", e.target.value)}
+                />
+                <label>Last Name</label>
+            <input className='input'
+                value={last_name}
+                onChange={e => this.handleChange("last_name", e.target.value)}
+                />
             <label htmlFor='username'>Username</label>
                 <input className='input'
                 value={username}
                 onChange={e => this.handleChange("username", e.target.value)}
+                />
+                <label>Email</label>
+            <input className='input'
+                value={email}
+                onChange={e => this.handleChange("email", e.target.value)}
+                />
+                <label>Phone Number</label>
+            <input className='input'
+                value={phone}
+                onChange={e => this.handleChange("phone", e.target.value)}
                 />
             </div>
 

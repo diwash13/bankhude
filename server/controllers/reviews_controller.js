@@ -2,10 +2,10 @@ module.exports = {
     getAll: (req, res) => {
         const db = req.app.get('db')
 
-        db.get_all_reviews().then(messages => {
-            resizeBy.status(200).send(reviews)
+        db.get_all_reviews().then(reviews => {
+            res.status(200).send(reviews)
         }).catch(err => {
-            resizeBy.status(500).send(err)
+            res.status(500).send(err)
         })
     },
 
@@ -35,7 +35,7 @@ module.exports = {
         const db = req.app.get('db')
         const { id } = req.params
 
-        db.delete_review([id]).then(reviews => {
+        db.delete_reviews([id]).then(reviews => {
             res.status(200).send(reviews)
         }).catch(err => {
             res.status(500).send(err)
@@ -49,6 +49,8 @@ module.exports = {
 
         db.update_review([id, review]).then(reviews => {
             res.status(200).send(reviews)
+        }).catch(err => {
+            res.status(500).send(err)
         })
     }
 }

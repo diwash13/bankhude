@@ -3,6 +3,7 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 50px;
+    font-family: 'Indie Flower', cursive;
 }
 
 .button:hover {
@@ -12,7 +13,7 @@
 
 .logo {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .nav {
@@ -37,8 +38,17 @@
     width: 50%;
 } */
 
-.footer {
+.review-body {
+    height: 72vh;
+    width: 100%;
+}
+
+.review-input {
+    margin-top: 10px;
+}
+
+/* .footer {
     height: 50px;
     width: 100%;
     background-color: wheat;
-}
+} */

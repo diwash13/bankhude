@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom';
 
 export default class Review extends Component {
@@ -36,10 +34,10 @@ export default class Review extends Component {
 
     render() {
         const { review, user } = this.props
-        console.log(user)
+        // console.log(user)
         return (
             <div>
-                <Nav />
+               
                 Review
                 <div>
                     {user.username === review.username ? (
@@ -52,6 +50,15 @@ export default class Review extends Component {
                         <p>
                             <strong>{review.username}</strong>
                         </p>
+                    )}
+                    {this.state.editing ? (
+                        <input
+                            type='text'
+                            value={this.state.review}
+                            onChange={e => this.handleReview(e.target.value)}
+                        />
+                    ) : (
+                        <p>{review.review}</p>
                     )}
                 </div>
                 {user.username === review.username ? (
@@ -68,7 +75,6 @@ export default class Review extends Component {
                         )}
                     </div>
                 ) : null}
-                <Footer />
             </div>
         )
     }

@@ -15,7 +15,7 @@ body {
 }
 .right-body {
     
-    width: 60%;
+    width: 50%;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@ body {
 }
 
 .controller {
-    font-family: cursive;
+    font-family: 'Indie Flower', cursive;
     font-size: 25px;
     display: flex;
     justify-content: flex-end;
@@ -72,7 +72,7 @@ body {
     text-align: center;
     padding: 5px;
     margin-bottom: 17px;
-    font-family: cursive;
+    font-family: 'Indie Flower', cursive;
     font-size: 22px;
 }
 
@@ -93,7 +93,7 @@ body {
     height: 30px;
     width: 200px;
     font-size: 20px;
-    font-family: cursive;
+    font-family: 'Indie Flower', cursive;
 }
 
 .login-btn {
@@ -114,3 +114,85 @@ body {
     background-color: red;
     color: white;
 }
+
+.card {
+    margin: 50px 50px 50px 50px;
+    border: 2px solid green;
+    /* border-color: transparent; */
+    transition: all 1s linear;
+    /* overflow: auto; */
+    /* z-index: -1; */
+}
+.card:hover {
+    border: 0.04 solid rgba(0,0,0,0,0.2);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0,0.2)
+}
+.img-container {
+    width: 100%;
+    height: 100%;
+    background-color: wheat;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-container:hover .card-img-top {
+    transform: scale(1.2)
+}
+
+.card-img-top{
+    height: 50px;
+    width: 50px;
+    transition: all 0.7s linear;
+}
+.cart-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.2rem, 0.4rem;
+    background: aqua;
+    border: none;
+    color: white;
+    border-radius: 0.5rem 0 0 0;
+    transform: translate(100%, 100%);
+    transition: all 0.7s linear;
+}
+.img-container:hover .cart-btn {
+    transform: translate(0, 0);
+}
+
+.cart-btn:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.back-btn {
+    margin: 10px 10px 10px 10px;
+    bottom: 0;
+    right: 0;
+    padding: 0.2rem, 0.4rem;
+    background: aqua;
+    border: none;
+    color: white;
+    border-radius: 0.5rem 0 0 0;
+}
+.back-btn:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.7s linear;
+    transform: scale(1.2)
+}
+
+.services {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.service-card {
+    border: 2px solid aqua;
+    width: 100vw;
+    /* height: 100vw; */
+}
+
+
+

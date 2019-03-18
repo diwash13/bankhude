@@ -2,12 +2,13 @@ require('dotenv').config()
 const express = require ('express')
 const session = require ('express-session')
 const massive = require ('massive')
+const pg = require ('pg')
+const pgSession = require('connect-pg-simple')(session)
 
 const uc = require ('./controllers/userController')
 const rc = require ('./controllers/reviews_controller')
-
-const pg = require('pg')
-const pgSession = require('connect-pg-simple')(session)
+const sc = require ('./controllers/services_controller')
+const cc = require ('./controllers/cart_controller')
 
 const app = express()
 
@@ -15,12 +16,13 @@ const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
 const pgPool = new pg.Pool({
     connectionString: CONNECTION_STRING
-})
+  })
 
 app.use(express.json())
 app.use(session({
-    store:new pgSession({
-        pool: pgPool
+    store: new pgSession({
+        pool: pgPool,
+        pruneSessionInterval: 60 * 60 * 24
     }),
     secret: SESSION_SECRET,
     resave: false,
@@ -46,3 +48,10 @@ app.get('/api/review/:id', rc.getReview)
 app.post('/api/review', rc.addReview)
 app.delete('/api/review/:id', rc.deleteReview)
 app.put('/api/review/:id', rc.updateReview)
+
+app.get('/api/services', sc.getAll)
+app.get('/api/service/:id', sc.getService)
+
+app.post('/api/cart/', cc.addService)
+app.get('/api/cart', cc.getCart)
+app.delete('/api/cart/:id', cc.deleteCart)

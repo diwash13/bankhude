@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import "./logo.png";
 
-export function Logo() {
-    return (
-        <div>Logo</div>
-    )
+export default function Logo() {
+  return (
+    <div>
+      <img src="./logo.png" alt="logo" />
+    </div>
+  );
 }

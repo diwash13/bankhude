@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import ReviewList from './ReviewList'
 import axios from 'axios'
+import { connect } from 'react-redux'
 
-class ReviewList extends Component {
+class ReviewPage extends Component {
     constructor(props) {
         super(props)
 
@@ -13,6 +14,7 @@ class ReviewList extends Component {
 
         this.deleteReview = this.deleteReview.bind(this)
         this.updateReview = this.updateReview.bind(this)
+        this.postReview = this.postReview.bind(this)
     }
 
     handleInput(val) {
@@ -23,6 +25,7 @@ class ReviewList extends Component {
 
     componentDidMount() {
         axios.get('/api/reviews').then(res => {
+            // console.log(res.data)
             this.setState({
                 reviews: res.data
             })
@@ -64,14 +67,21 @@ class ReviewList extends Component {
                 update={this.updateReview}
                 />
                 <div>
-                    <textarea
+                    <textarea className='review-input'
                         value={this.state.input}
                         onChange={e => this.handleInput(e.target.value)}
                         placeholder='Write your review'
                     />
-                    <button onClick={() => this.postReview}>Submit</button>
+                    <button onClick={this.postReview}>Submit</button>
                 </div>
+                <div className='review-body'></div>
             </div>
         )
     }
 }
+const mapStateToProps = reduxState => {
+    return {
+      user: reduxState
+    }     
+}
+export default connect(mapStateToProps)(ReviewPage)
