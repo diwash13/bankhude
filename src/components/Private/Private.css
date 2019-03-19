@@ -1,52 +1,115 @@
+body{
+    overflow: auto;
+}
+
 .logout {
-    height: 20px;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 50px;
-    font-family: 'Indie Flower', cursive;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  font-family: "Indie Flower", cursive;
 }
 
 .button:hover {
-    background-color: red;
-    cursor: pointer;
+  background-color: red;
+  cursor: pointer;
 }
 
 .logo {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav {
-    width: 100%;
-    height: 50px;
-    background-color: wheat;
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
-    margin-top: 40px;
-    margin-right: 50px;
+  width: 100%;
+  height: 50px;
+  background-color: #EFD5E0;
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  margin-right: 50px;
 }
 
 .left {
-    height: 76vh;
-    width: 50%;
-    background-color: aqua;
+    height: 80vh;
+  width: 60%;
+  background-image: url("http://ladybeatrix.com/wp-content/uploads/2015/03/pic-services-skin-care.jpg");
 }
 
-/* .right {
+.right {
     height: 76vh;
-    width: 50%;
-} */
+    width: 40%;
+    margin-top: 20px;
+    font-family: inherit;
+    color: grey;
+}
+.right h2{
+    font-family: cursive;
+}
+
+.private-body {
+    display: flex;
+}
+
 
 .review-body {
-    height: 72vh;
-    width: 100%;
+  height: 72vh;
+  width: 100%;
 }
 
 .review-input {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
+.bankhude {
+  display: flex;
+    height: 80vh;
+  width: 60%;
+}
+.banks {
+    height: 600px;
+    width: 100%;
+}
+
+.about {
+    height: 76vh;
+    width: 40%;
+    margin-top: 30px;
+    font-family: inherit;
+    color: grey;
+}
+.about-body {
+  display: flex;
+}
+.about h3{
+  margin-bottom: 20px;
+  font-family: cursive;
+}
+.map{
+  margin: 30px 20px 20px 30px;
+}
+
+.middle{
+  margin-top: 30px;
+  color: grey;
+  height: 100px;
+  width:300px;
+}
+.middle li{
+  list-style: none;
+}
+.middle h4{
+  font-family: cursive;
+  font-weight: bold;
+}
+.right h4{
+  font-family: cursive;
+  font-weight: bold;
+}
+.right li{
+  list-style: none;
+}
 /* .footer {
     height: 50px;
     width: 100%;

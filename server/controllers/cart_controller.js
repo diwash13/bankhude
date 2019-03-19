@@ -35,5 +35,20 @@ module.exports = {
         }).catch(err => {
             res.status(500).send(err)
         })
+    },
+
+    clearCart: (req, res) => {
+        console.log('hit')
+        const db = req.app.get('db')
+        const { id } = req.params
+        const user_id = id
+        // console.log(user_id)
+
+        db.clear_cart([user_id]).then(cart => {
+            res.status(200).send(cart)
+        }).catch(err => {
+            console.log(err)
+            res.status(501).send(err)
+        })
     }
 }

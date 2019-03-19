@@ -26,24 +26,25 @@ class Detail extends Component {
         const { service } = this.state
         return (
             
-            <div className='container py-5'>
-            <div className='row'>
-            <div className='.col-10.mx-auto.text-center.text-slanted.text-blue.my-5'>
-                <h2>{service.service}</h2>
-            </div>
-            </div> <div className='row'>
+            <div>
                <div>
-               <img src={`${service.img}` } className='img-fluid' alt='service'/>
+                    <h3 style={{fontFamily:'cursive', color:'grey', fontWeight:'bold', marginTop:15}}>{service.service}</h3>
                </div> 
-               <h4 className='text-blue'>
-               <strong>{service.price}</strong>
-               </h4>
-               <div>
-               <p className='text-muted lead'>{service.info}</p>
+               <div className='service-div'>
+                   <div className='img-div'>
+                        <img  style={{height:300}}src={`${service.img}`} alt='service'/>
+                   </div>
+                   <div className='info-div'>{service.info}</div>
                </div>
-            </div>
-                <button className='back-btn' onClick={() => this.addToCart(service.service_id)}>Add to Cart</button>
-                <button className='back-btn' onClick={() => this.props.history.goBack()}>Back To Services</button>
+               <div className='bottom-div'>
+                   <div className='price-div'>
+                       <h4>${service.price}</h4>
+                    </div>
+                   <div className='btn-div'>
+                        <button className='back-btn' onClick={() => this.addToCart(service.service_id)}>Add to Cart</button>
+                        <button className='back-btn' onClick={() => this.props.history.goBack()}>Back To Services</button>
+                   </div>
+               </div>
             </div>
         )
     }

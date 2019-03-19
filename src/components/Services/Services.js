@@ -67,7 +67,7 @@ class Services extends Component {
             return (
                 
                 <div className="service-card">
-                    Services
+                    <h3 style={{fontFamily:'cursive', color:'grey', marginTop:5}}>Services We Offer</h3>
                     <div>
               <div className="services">{mappedServices}</div>
               

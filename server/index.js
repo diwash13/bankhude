@@ -9,14 +9,16 @@ const uc = require ('./controllers/userController')
 const rc = require ('./controllers/reviews_controller')
 const sc = require ('./controllers/services_controller')
 const cc = require ('./controllers/cart_controller')
+const pc = require ('./controllers/payment_controller')
 
 const app = express()
 
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_SECRET} = process.env
 
 const pgPool = new pg.Pool({
     connectionString: CONNECTION_STRING
   })
+
 
 app.use(express.json())
 app.use(session({
@@ -55,3 +57,6 @@ app.get('/api/service/:id', sc.getService)
 app.post('/api/cart/', cc.addService)
 app.get('/api/cart', cc.getCart)
 app.delete('/api/cart/:id', cc.deleteCart)
+app.delete('/api/clearCart/:id', cc.clearCart)
+
+app.post('/api/payment', pc.handlePayment)

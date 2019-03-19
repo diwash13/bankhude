@@ -1,10 +1,12 @@
 const initialState = {
     id: 0,
-    username: ''
+    username: '',
+    total: 0
 }
 
 const UPDATE_USER = 'UPDATE_USER'
 const CLEAR_USER = 'CLEAR_USER'
+const UPDATE_TOTAL= 'UPDATE_TOTAL'
 
 export function updateUser(user) {
     return {
@@ -19,6 +21,13 @@ export function clearUser() {
     }
 }
 
+export function updateTotal(total) {
+    return {
+        type: UPDATE_TOTAL,
+        payload: total
+    }
+}
+
 export default function reducer(state = initialState, action) {
     const { type, payload } = action
     switch (type) {
@@ -27,6 +36,8 @@ export default function reducer(state = initialState, action) {
             return { ...state, id, username }
         case CLEAR_USER:
             return { ...state, id:0, username: '' }
+        case UPDATE_TOTAL: 
+            return { ...state, total: payload }
         default:
             return state
     }

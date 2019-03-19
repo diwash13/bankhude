@@ -58,6 +58,8 @@ class ReviewPage extends Component {
     }
 
     render() {
+        const { user } = this.props
+        console.log(user)
         return (
             <div>
                 <ReviewList 
@@ -66,22 +68,25 @@ class ReviewPage extends Component {
                 delete={this.deleteReview}
                 update={this.updateReview}
                 />
+                {user !== "" &&
                 <div>
-                    <textarea className='review-input'
+                    <textarea 
                         value={this.state.input}
                         onChange={e => this.handleInput(e.target.value)}
                         placeholder='Write your review'
                     />
                     <button onClick={this.postReview}>Submit</button>
                 </div>
-                <div className='review-body'></div>
+                }
+                {/* <div className='review-body'></div> */}
             </div>
+                
         )
     }
 }
 const mapStateToProps = reduxState => {
     return {
-      user: reduxState
+      user: reduxState.username
     }     
 }
 export default connect(mapStateToProps)(ReviewPage)

@@ -50,6 +50,7 @@ class Dashboard extends Component {
                 {this.state.isRegisterOpen && <Register history={this.props.history}/>}
      </div>
      </div>
+     
       );
     }
   }
