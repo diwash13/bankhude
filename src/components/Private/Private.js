@@ -16,8 +16,8 @@ We ensure a relaxing and rejuvenating experience each time you choose Priyanka S
           <p>An analyzing service is performed prior to a scheduled treatment. Your face will be analyzed by a Master Esthetician to address any concerns and to make suggestions about products and techniques that will help improve the overall health of your skin.</p>
           <p>We provide a full range of waxing services at Priyanka Skin Care, including basic bikini waxing, leg waxing, face waxing, brazilian bikini waxing and more. Both men and women take advantage of the benefits of waxing, which offers a great way to get smooth skin without the daily hassle of shaving. We utilize both hard and soft waxes combined with soothing ingredients for optimal hair removal results.</p>
         </div>
-        <footer className='footer'>
-        </footer>
+        {/* <footer className='footer'>
+        </footer> */}
       </div>
     );
       }

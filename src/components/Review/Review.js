@@ -37,18 +37,16 @@ export default class Review extends Component {
         // console.log(user)
         return (
             <div>
-               
-                Review
                 <div>
                     {user.username === review.username ? (
                         <Link to={`/review/${review.id}`}>
                             <p>
-                                <strong>{review.username}</strong>
+                                <strong style={{color:'green'}} >{review.username}</strong>
                             </p>
                         </Link>
                     ) : (
                         <p>
-                            <strong>{review.username}</strong>
+                            <strong style={{color:'grey'}}>{review.username}</strong>
                         </p>
                     )}
                     {this.state.editing ? (

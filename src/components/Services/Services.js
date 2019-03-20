@@ -72,8 +72,8 @@ class Services extends Component {
               <div className="services">{mappedServices}</div>
               
             </div>
-            <footer className="footer">
-            </footer>
+            {/* <footer className="footer">
+            </footer> */}
                 </div>
                 
             

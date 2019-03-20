@@ -32,8 +32,8 @@ export default function Contact() {
                 <li>Phone: 251-327-5585</li>
             </ul>
           </div>
-            <footer className='footer'>
-            </footer>
+            {/* <footer className='footer'>
+            </footer> */}
         </div>
     )
 }

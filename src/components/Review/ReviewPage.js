@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ReviewList from './ReviewList'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import './Review.scss'
+import Picture from './review.jpg'
 
 class ReviewPage extends Component {
     constructor(props) {
@@ -62,23 +64,33 @@ class ReviewPage extends Component {
         console.log(user)
         return (
             <div>
-                <ReviewList 
-                reviews={this.state.reviews}
-                user={this.props.user}
-                delete={this.deleteReview}
-                update={this.updateReview}
-                />
-                {user !== "" &&
-                <div>
-                    <textarea 
-                        value={this.state.input}
-                        onChange={e => this.handleInput(e.target.value)}
-                        placeholder='Write your review'
-                    />
-                    <button onClick={this.postReview}>Submit</button>
+                <div className='review-div'>
+                    <div className='img-div'>
+                        <img src={Picture} alt='img' />
+                    </div>
+                    <div>
+                        <div>
+                            <h3 style={{fontFamily:'cursive', color:'grey', marginTop:20}} >Submit Your Review</h3>
+                            <p style={{color:'grey', marginLeft:50, marginRight:50, marginBottom:30}} >Your feedback is highly appreciated and will help us to improve our ability to serve you and other valuable customers.</p>
+                            <div className='review-input'>
+                                <textarea style={{width:300}}
+                                    value={this.state.input}
+                                    onChange={e => this.handleInput(e.target.value)}
+                                    placeholder='Write your review'
+                                />
+                                <button className='submit-btn' onClick={this.postReview}>Submit</button>
+                            </div>
+                        </div>
+                        <div className='display-review'>
+                            <ReviewList 
+                                reviews={this.state.reviews}
+                                user={this.props.user}
+                                delete={this.deleteReview}
+                                update={this.updateReview}
+                            />
+                        </div>
+                    </div>
                 </div>
-                }
-                {/* <div className='review-body'></div> */}
             </div>
                 
         )

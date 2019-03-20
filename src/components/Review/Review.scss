@@ -1,0 +1,44 @@
+.review-div{
+    display: flex;
+}
+
+.img-div img{
+    
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.img-div.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+}
+
+.review-input{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 300px;
+}
+
+.submit-btn{
+    margin-right: 220px;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+    background-color: #F4DBE1;
+}
+
+.display-review{
+    height: 100%;
+    width: 700px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 30px;
+    border-style: solid;
+    border-width: 2px 10px 4px 20px;
+    border-color: #F2DBE1;
+}
