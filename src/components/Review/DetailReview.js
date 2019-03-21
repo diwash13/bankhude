@@ -23,7 +23,7 @@ export default class DetailReview extends Component {
         return (
             <div>
                 <button onClick={() => this.props.history.goBack()}>Back</button>
-                <h2>Username: {review.username}</h2>
+                <h2>Username: {review.user}</h2>
                 <h3>Password: {review.password}</h3>
             </div>
         )

@@ -5,7 +5,7 @@ module.exports = {
         const { id } = req.session.user
         const { service_id} = req.body
         const user_id = id
-        console.log(user_id, service_id)
+        // console.log(user_id, service_id)
 
         db.add_service([user_id, service_id]).then(() => {
             res.status(200)
@@ -16,8 +16,10 @@ module.exports = {
 
     getCart: (req, res) => {
         const db = req.app.get('db')
+        const { id } = req.session.user
+        const user_id = id
 
-        db.get_cart().then( cart => {
+        db.get_cart([user_id]).then( cart => {
             res.status(200).send(cart)
         }).catch( err => {
             res.status(500).send(err)
@@ -30,7 +32,7 @@ module.exports = {
         const cart_id = id
         // console.log(req.params)
 
-        db.delete_cart([cart_id]).then( cart => {
+        db.delete_cart([cart_id, req.session.user.user_id]).then( cart => {
             res.status(200).send(cart)
         }).catch(err => {
             res.status(500).send(err)

@@ -5,3 +5,4 @@ select cart.cart_id, cart.user_id, cart.service_id, services.service, users.user
 from cart
 join users on cart.user_id = users.id
 join services on cart.service_id = services.service_id
+where user_id=$2

@@ -29,22 +29,111 @@ body{
   display: flex;
   justify-content: space-between;
 }
+.subnav h1{
+  margin-top: 40px;
+  font-family: cursive;
+  color: grey;
+  font-weight: bold;
+}
+.subnav h5 {
+  margin-right: 40px;
+  margin-top: 20;
+  font-family: cursive;
+  color: grey;
+}
+.button {
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
+@media (max-width:768px) {
+  .logo {
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  .subnav {
+    display: block;
+  }
+  .subnav h1 {
+    font-size: 30px;
+    margin-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  .subnav h5{
+    font-size: 15px;
+    margin-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  .subnav button {
+    font-size: 10px;
+    margin-top: -80px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    height:20px;
+    width:50px;
+    background-color: pink;
+  }
+}
 
 .nav {
   width: 100%;
-  height: 50px;
+  /* height: 50px; */
   background-color: #EFD5E0;
   display: flex;
   list-style: none;
   justify-content: space-evenly;
-  margin-top: 40px;
+  margin-top: 5px;
   margin-right: 50px;
+  font-size: 25px;
 }
+
+.toggle {
+  width: 100%;
+  padding: 10px 20px;
+  background: skyblue;
+  text-align: right;
+  box-sizing: border-box;
+  color: pink;
+  font-size: 30px;
+  display: none;
+}
+@media (max-width:768px)
+{
+  .toggle{
+    display: block;
+  }
+  .nav {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+
 
 .left {
     height: 80vh;
   width: 60%;
   background-image: url("http://ladybeatrix.com/wp-content/uploads/2015/03/pic-services-skin-care.jpg");
+}
+
+@media (max-width:768px) 
+{
+  .left {
+    background-size: 120%;
+    height: 20vh;
+    /* width: 40%; */
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
 }
 
 .right {
@@ -54,12 +143,27 @@ body{
     font-family: inherit;
     color: grey;
 }
+@media (max-width:768px) {
+
+  .right {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: 100%;
+  }
+}
 .right h2{
     font-family: cursive;
 }
 
 .private-body {
     display: flex;
+}
+
+@media (max-width:768px) {
+  .private-body{
+  display: block;
+  }
 }
 
 
@@ -77,9 +181,23 @@ body{
     height: 80vh;
   width: 60%;
 }
+@media (max-width:768px) {
+  .bankhude {
+    height: 250px;
+  }
+}
+
 .banks {
     height: 600px;
     width: 100%;
+}
+
+@media (max-width:768px) 
+{
+  .banks {
+    height: 250px;
+    width: 170%;
+  }
 }
 
 .about {
@@ -89,9 +207,28 @@ body{
     font-family: inherit;
     color: grey;
 }
+@media (max-width:768px) {
+  .about {
+    width: 100%;
+  }
+}
+
+@media (max-width:768px) {
+  .about p{
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-right: 2px;
+  }
+}
 .about-body {
   display: flex;
 }
+@media (max-width:768px) {
+  .about-body {
+    display: block;
+  }
+}
+
 .about h3{
   margin-bottom: 20px;
   font-family: cursive;
@@ -113,15 +250,20 @@ body{
   font-family: cursive;
   font-weight: bold;
 }
-.right h4{
+.right-contact {
+  height: 100vw;
+}
+.right-contact h4{
   font-family: cursive;
   font-weight: bold;
+  color: grey;
 }
-.right li{
+.right-contact li{
   list-style: none;
+  color: grey;
 }
-/* .footer {
-    height: 50px;
-    width: 100%;
-    background-color: wheat;
-} */
+@media (max-width:768px) {
+  .right-contact{
+    margin-top: 220px;
+  }
+}

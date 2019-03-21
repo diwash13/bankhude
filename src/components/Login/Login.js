@@ -52,19 +52,18 @@ class Login extends Component {
   render() {
     const { username, password } = this.state
     return (
-      <form className='inner-container' onSubmit={this.login}>
-        <div className='header'></div>
-            <div className='box'>
-            <div className='input-group'>
-            <label htmlFor='username'>Username</label>
+      <form onSubmit={this.login}>
+         <div style={{marginLeft:80}}>
+            <div>
+              <label style={{marginLeft:40, color:'grey', marginTop:20}}>Username</label>
                 <input className='input'
                 value={username}
                 onChange={e => this.handleChange("username", e.target.value)}
                 />
             </div>
 
-            <div className='input-group'>
-             <label htmlFor='password'>Password</label>
+            <div>
+             <label style={{marginLeft:40, color:'grey', marginTop:20}}>Password</label>
                 <input className='input'
                 type="password"
                 value={password}
@@ -76,7 +75,7 @@ class Login extends Component {
           type='button'
           className='login-btn'
           type='submit'>Login</button>
-        </div>
+      </div>
       </form>
     )
   }

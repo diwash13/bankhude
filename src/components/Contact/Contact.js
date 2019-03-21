@@ -24,7 +24,7 @@ export default function Contact() {
                 <li>Home Visit: Yes</li>
             </ul>
             </div>
-          <div className='right'>
+          <div className='right-contact'>
           <h4>About Your Favorite Esthetician</h4>
             <ul>
                 <li>Name: Priyanka Sharma</li>

@@ -34,11 +34,11 @@ export default class Review extends Component {
 
     render() {
         const { review, user } = this.props
-        // console.log(user)
+        // console.log(user.username)
         return (
             <div>
                 <div>
-                    {user.username === review.username ? (
+                    {user === review.username ? (
                         <Link to={`/review/${review.id}`}>
                             <p>
                                 <strong style={{color:'green'}} >{review.username}</strong>
@@ -50,7 +50,7 @@ export default class Review extends Component {
                         </p>
                     )}
                     {this.state.editing ? (
-                        <input
+                        <input className='edit-box'
                             type='text'
                             value={this.state.review}
                             onChange={e => this.handleReview(e.target.value)}
@@ -59,17 +59,17 @@ export default class Review extends Component {
                         <p>{review.review}</p>
                     )}
                 </div>
-                {user.username === review.username ? (
+                {user === review.username ? (
                     <div>
-                        <button onClick={() => this.props.delete(review.id)}>
+                        <button className='review-btn' onClick={() => this.props.delete(review.id)}>
                           Delete
                         </button>
                         {this.state.editing ? (
-                            <button onClick={() => this.update(review.id)}>
+                            <button className='review-btn' onClick={() => this.update(review.id)}>
                               Save Changes
                             </button>
                         ) : (
-                            <button onClick={() => this.setEdit()}>Edit</button>
+                            <button className='review-btn' onClick={() => this.setEdit()}>Edit</button>
                         )}
                     </div>
                 ) : null}

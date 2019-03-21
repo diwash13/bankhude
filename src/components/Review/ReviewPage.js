@@ -69,7 +69,7 @@ class ReviewPage extends Component {
                         <img src={Picture} alt='img' />
                     </div>
                     <div>
-                        <div>
+                        <div className='text'>
                             <h3 style={{fontFamily:'cursive', color:'grey', marginTop:20}} >Submit Your Review</h3>
                             <p style={{color:'grey', marginLeft:50, marginRight:50, marginBottom:30}} >Your feedback is highly appreciated and will help us to improve our ability to serve you and other valuable customers.</p>
                             <div className='review-input'>

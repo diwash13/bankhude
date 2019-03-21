@@ -3,7 +3,7 @@ import "../Footer/Footer.css";
 import { withRouter } from "react-router-dom";
 
 function Footer(props) {
-  if (props.location.pathname !== "/") {
+  // if (props.location.pathname !== "/") {
     return (
       <div className="footer">
         <h3>Connect With Us</h3>
@@ -20,10 +20,10 @@ function Footer(props) {
           className="fa fa-instagram"
         />
       </div>
-    );
-  } else {
-    return null;
-  }
+    )
+  // } else {
+  //   return null;
+  // }
 }
 
 export default withRouter(Footer);

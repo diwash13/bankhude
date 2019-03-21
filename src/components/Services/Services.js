@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import Detail from '../Detail/Detail'
 import { connect } from 'react-redux'
 import { toast } from 'react-toastify';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import Spinner from '../Spinner/Spinner'
 
 class Services extends Component {
     constructor(props) {
@@ -26,11 +28,18 @@ class Services extends Component {
 
     addToCart = (service_id) => {
         if (this.props.username) {
-        axios.post(`/api/cart`,{ service_id:service_id}) 
+        axios.post(`/api/cart`,{ service_id:service_id}).then(
+            // toast.success('added to cart')
+            )
         } else {
             this.props.history.push('/dashboard')
         }
     }
+                                createNotification = (type) => {
+                                    return () => {
+                                      switch (type) {
+                                        case 'info':
+                                          NotificationManager.info('Info message')}}}
     
 
     render() {
@@ -61,7 +70,8 @@ class Services extends Component {
         })
 
         if(!isLoaded) {
-            return <div>Hang Tight while we fetch your data...</div>
+            // <div>Hang Tight while we fetch your data...</div>
+            return <Spinner />
         } else {
 
             return (
@@ -72,6 +82,7 @@ class Services extends Component {
               <div className="services">{mappedServices}</div>
               
             </div>
+            <NotificationContainer/>
             {/* <footer className="footer">
             </footer> */}
                 </div>

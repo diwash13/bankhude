@@ -55,7 +55,7 @@ app.get('/api/services', sc.getAll)
 app.get('/api/service/:id', sc.getService)
 
 app.post('/api/cart/', cc.addService)
-app.get('/api/cart', cc.getCart)
+app.get('/api/cart/', cc.getCart)
 app.delete('/api/cart/:id', cc.deleteCart)
 app.delete('/api/clearCart/:id', cc.clearCart)
 

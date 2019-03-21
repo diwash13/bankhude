@@ -33,16 +33,20 @@ class Nav extends Component {
         <div >
           <div className='subnav'>
             <img className='logo' src={logo} alt='logo'></img>
-            <h1 style={{marginTop:40, fontFamily: 'cursive', color: 'grey', fontWeight:'bold'}}>Priyanka Skin Care</h1>
+            <h1>Priyanka Skin Care</h1>
             {!username ? 
           <Link to='/dashboard' style={{marginRight:40, marginTop:20}}>LogIn / Register</Link> :
           <div >
-            <h5 style={{marginRight:40, marginTop:20, fontFamily:'cursive', color: 'grey'}}>Welcome {username}</h5>
-            <button className='button' style={{marginRight:40, marginTop:20}} onClick={this.logout}>Logout</button>
+            <h5>Welcome {username}</h5>
+            <button onClick={this.logout}>Logout</button>
           </div>
           }
           </div>
-            <ul className='nav' style={{ marginTop: 5, fontSize: '30px'}}>
+          <div>
+          <div className='toggle'>
+            <i class="fa fa-bars"></i>
+          </div>
+            <ul className='nav'>
               <Link to='/'><li>Home</li></Link>
               <Link to='/services'><li>Services</li></Link>
               <Link to='/about'><li>About Us</li></Link>
@@ -50,6 +54,7 @@ class Nav extends Component {
               <Link to='/reviews'><li>Reviews</li></Link>
               <Link to='/cart'><li>Cart</li></Link>
             </ul>
+            </div>
         </div>
     )
   // } else {

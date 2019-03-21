@@ -1,11 +1,29 @@
 .review-div{
     display: flex;
 }
+@media (max-width:768px) {
+    .review-div{
+        display: block;
+        width: 100%;
+    }
+}
 
 .img-div img{
     
     height: 500px;
     margin-bottom: 20px;
+}
+@media (max-width:768px) {
+    .img-div img {
+        height: 220px;
+        width: 220px;
+        margin-left: -120px;
+    }
+}
+@media (max-width:768px) {
+    .text {
+        margin-left: -40px;
+    }
 }
 
 .img-div.sticky{
@@ -19,6 +37,19 @@
     justify-content: space-between;
     margin-left: 300px;
 }
+@media (max-width:768px) {
+    .review-input {
+        display: block;
+        margin-left: 150px;
+    }
+    .review-input textarea {
+        margin-left: -120px;
+        height: 50px;
+        border-style: solid;
+        border-width: 2px 10px 4px 10px;
+        border-color: #F2DBE1;
+    }
+}
 
 .submit-btn{
     margin-right: 220px;
@@ -29,6 +60,13 @@
 .submit-btn:hover{
     cursor: pointer;
     background-color: #F4DBE1;
+}
+@media (max-width:768px) {
+    .submit-btn {
+        border-style: solid;
+        border-width: 2px 10px 4px 10px;
+        border-color: #F2DBE1;
+    }
 }
 
 .display-review{
@@ -41,4 +79,23 @@
     border-style: solid;
     border-width: 2px 10px 4px 20px;
     border-color: #F2DBE1;
+}
+
+@media (max-width:768px) {
+    .display-review {
+        width: 100vw;
+        margin-left: 8px;
+    }
+}
+ .review-btn {
+    margin-right: 5px;
+    margin-bottom: 20px;
+ }
+ .review-btn:hover{
+    cursor: pointer;
+    background-color: #F4DBE1;
+}
+
+.edit-box {
+    margin-bottom: 15px;
 }
