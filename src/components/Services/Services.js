@@ -3,9 +3,12 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import Detail from '../Detail/Detail'
 import { connect } from 'react-redux'
-import { toast } from 'react-toastify';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+// import { ToastContainer, toast } from 'react-toastify';
+// import {NotificationContainer, NotificationManager} from 'react-notifications';
 import Spinner from '../Spinner/Spinner'
+// import alertify from 'alertifyjs'
+import Snackbar from '../Snackbar/Snackbar'
+
 
 class Services extends Component {
     constructor(props) {
@@ -28,20 +31,12 @@ class Services extends Component {
 
     addToCart = (service_id) => {
         if (this.props.username) {
-        axios.post(`/api/cart`,{ service_id:service_id}).then(
-            // toast.success('added to cart')
-            )
+        axios.post(`/api/cart`,{ service_id:service_id})
         } else {
             this.props.history.push('/dashboard')
         }
     }
-                                createNotification = (type) => {
-                                    return () => {
-                                      switch (type) {
-                                        case 'info':
-                                          NotificationManager.info('Info message')}}}
     
-
     render() {
         // console.log(this.state.services)
         const { isLoaded, services } = this.state
@@ -49,7 +44,8 @@ class Services extends Component {
             return (
                 
                 <div className="card">
-                <div className="img-container" onClick={() => console.log('u clicked me')}>
+                {/* <ToastContainer/> */}
+                <div className="img-container">
                     {/* key={service.service_id} */}
                     <Link to={`/detail/${service.service_id}`}>
                     <div>
@@ -61,6 +57,7 @@ class Services extends Component {
                     </div>
                     </Link>
                     <button className='cart-btn'onClick={() => this.addToCart(service.service_id)}>
+                    {/* <Snackbar /> */}
                     Add
                     </button> 
                     </div>
@@ -82,7 +79,6 @@ class Services extends Component {
               <div className="services">{mappedServices}</div>
               
             </div>
-            <NotificationContainer/>
             {/* <footer className="footer">
             </footer> */}
                 </div>

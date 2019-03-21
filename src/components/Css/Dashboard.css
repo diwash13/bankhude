@@ -157,6 +157,7 @@ body {
     transition: all 0.7s linear;
 }
 .cart-btn {
+    display: flex;
     position: absolute;
     bottom: 0;
     right: 0;

@@ -7,6 +7,12 @@ import { connect } from "react-redux";
 import { updateUser, clearUser } from '../../ducks/reducer'
 
 class Nav extends Component {
+  constructor() {
+    super()
+    this.state = {
+      show: false
+    }
+  }
     componentDidMount() {
       this.getUser();
     }
@@ -27,6 +33,12 @@ class Nav extends Component {
       this.props.history.push("/");
     };
 
+    toggle() {
+      this.setState({
+        show: !this.state.show
+      })
+    }
+
     render() {
       const { username } = this.props;
     return (
@@ -43,10 +55,10 @@ class Nav extends Component {
           }
           </div>
           <div>
-          <div className='toggle'>
-            <i class="fa fa-bars"></i>
+          <div className='toggle' onClick={() => this.toggle()}>
+            <i className="fa fa-bars"></i>
           </div>
-            <ul className='nav'>
+            <ul className={ this.state.show ? 'nav show': 'nav'}>
               <Link to='/'><li>Home</li></Link>
               <Link to='/services'><li>Services</li></Link>
               <Link to='/about'><li>About Us</li></Link>

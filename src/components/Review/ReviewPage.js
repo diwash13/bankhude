@@ -36,11 +36,16 @@ class ReviewPage extends Component {
 
     postReview() {
         const { input } = this.state
+        if(this.props.user) {
         axios.post('/api/review', { review: input}).then(res => {
             this.setState({
                 reviews: res.data
             })
+            
         })
+    } else {
+        this.props.history.push('/dashboard')
+    }
     }
 
     deleteReview(id) {
@@ -69,6 +74,7 @@ class ReviewPage extends Component {
                         <img src={Picture} alt='img' />
                     </div>
                     <div>
+                        {/* { user === review.username ? ( */}
                         <div className='text'>
                             <h3 style={{fontFamily:'cursive', color:'grey', marginTop:20}} >Submit Your Review</h3>
                             <p style={{color:'grey', marginLeft:50, marginRight:50, marginBottom:30}} >Your feedback is highly appreciated and will help us to improve our ability to serve you and other valuable customers.</p>
@@ -80,6 +86,7 @@ class ReviewPage extends Component {
                                 />
                                 <button className='submit-btn' onClick={this.postReview}>Submit</button>
                             </div>
+                            
                         </div>
                         <div className='display-review'>
                             <ReviewList 

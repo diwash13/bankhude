@@ -78,7 +78,7 @@ body{
     align-items: center;
     height:20px;
     width:50px;
-    background-color: pink;
+    background-color: #EFD5E0;
   }
 }
 
@@ -96,11 +96,12 @@ body{
 
 .toggle {
   width: 100%;
-  padding: 10px 20px;
-  background: skyblue;
+  /* padding: 10px 20px; */
+  background: #EFD5E0;
   text-align: right;
   box-sizing: border-box;
-  color: pink;
+  height: 30px;
+  color: skyblue;
   font-size: 30px;
   display: none;
 }
@@ -108,11 +109,17 @@ body{
 {
   .toggle{
     display: block;
+    
   }
   .nav {
-    display: block;
+    display: none;
     text-align: center;
     font-size: 15px;
+  }
+  .show {
+    margin-top: -20px;
+    display: block;
+    height: 140px;
   }
 }
 
@@ -184,6 +191,9 @@ body{
 @media (max-width:768px) {
   .bankhude {
     height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
   }
 }
 
@@ -196,7 +206,8 @@ body{
 {
   .banks {
     height: 250px;
-    width: 170%;
+    width: 100%;
+    
   }
 }
 
@@ -210,6 +221,9 @@ body{
 @media (max-width:768px) {
   .about {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
   }
 }
 
@@ -250,10 +264,19 @@ body{
   font-family: cursive;
   font-weight: bold;
 }
+@media (max-width:768px) {
+  .middle{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+}
 .right-contact {
   height: 100vw;
 }
 .right-contact h4{
+  margin-top: 30px;
   font-family: cursive;
   font-weight: bold;
   color: grey;

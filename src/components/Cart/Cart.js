@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { updateTotal } from '../../ducks/reducer'
 import { connect } from 'react-redux'
+import './Cart.scss'
 
 class Cart extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Cart extends Component {
 
   deleteCart(id) {
     axios.delete(`/api/cart/${id}`).then(res => {
+      console.log(res.data)
       this.setState({
         cart: res.data
       });

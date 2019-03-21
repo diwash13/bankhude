@@ -18,9 +18,15 @@ class Detail extends Component {
         })
     }
 
-    addToCart =(service_id) => {
+    addToCart = (service_id) => {
+        if (this.props.username) {
         axios.post(`/api/cart`,{ service_id:service_id})
+        
+        } else {
+            this.props.history.push('/dashboard')
+        }
     }
+    
 
     render() {
         const { service } = this.state
