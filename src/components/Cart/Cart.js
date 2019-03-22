@@ -63,11 +63,11 @@ class Cart extends Component {
     return (
       <div className='cart'>
         {username? 
-        <div>
+        <div className='cart-div'>
         <h1>Your Service Cart</h1>
         {mappedCart}
         <h5>SubTotal: ${this.subTotal()} </h5>
-        <button onClick={() => this.props.history.push('/checkout')}>Checkout</button>
+        <button className='checkout-btn' onClick={() => this.props.history.push('/checkout')}>Checkout</button>
         </div> :
         <h3>Please login to view your cart</h3>
         }

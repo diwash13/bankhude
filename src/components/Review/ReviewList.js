@@ -11,7 +11,7 @@ export default function ReviewList(props) {
                 delete={props.delete}
                 update={props.update}
             />
-        )
+        ) 
     })
     return <div>{mappedReviews}</div>
 }

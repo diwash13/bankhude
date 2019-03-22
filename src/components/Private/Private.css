@@ -96,6 +96,7 @@ body{
 
 .toggle {
   width: 100%;
+  margin-bottom: 20px;
   /* padding: 10px 20px; */
   background: #EFD5E0;
   text-align: right;
