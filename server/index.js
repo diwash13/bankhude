@@ -15,6 +15,7 @@ const pc = require ('./controllers/payment_controller')
 const app = express()
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_SECRET} = process.env
+console.log(process.env)
 
 const pgPool = new pg.Pool({
     connectionString: CONNECTION_STRING
