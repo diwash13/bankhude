@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { reverse } from 'dns';
 
 export default class Review extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ export default class Review extends Component {
 
     setEdit() {
         this.setState({
-            editing: true
+            editing: true,
         })
     }
 
@@ -36,7 +37,7 @@ export default class Review extends Component {
         const { review, user } = this.props
         // console.log(user.username)
         return (
-            <div>
+            <div className='review'>
                 <div>
                     {user === review.username ? (
                         <Link to={`/review/${review.id}`}>

@@ -127,7 +127,7 @@ body{
 
 
 .left {
-    height: 80vh;
+    height: auto;
   width: 60%;
   background-image: url("http://ladybeatrix.com/wp-content/uploads/2015/03/pic-services-skin-care.jpg");
 }

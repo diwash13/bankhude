@@ -25,7 +25,6 @@ class Cart extends Component {
 
   deleteCart(id) {
     axios.delete(`/api/cart/${id}`).then(res => {
-      console.log(res.data)
       this.setState({
         cart: res.data
       });
@@ -39,7 +38,6 @@ class Cart extends Component {
       total += Number(item.price);
     });
     this.props.updateTotal(total.toFixed(2))
-    console.log(total.toFixed(2))
     return total.toFixed(2);
   }
   render() {

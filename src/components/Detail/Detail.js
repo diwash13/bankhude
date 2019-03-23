@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { connect } from 'react-redux'
 
 class Detail extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class Detail extends Component {
     }
 
     addToCart = (service_id) => {
+        console.log(this.props.username)
         if (this.props.username) {
         axios.post(`/api/cart`,{ service_id:service_id})
         
@@ -55,5 +57,8 @@ class Detail extends Component {
         )
     }
 }
+const mapStateToProps = reduxState => {
+    return reduxState
+}
 
-export default Detail
+export default connect(mapStateToProps) (Detail)
