@@ -40,7 +40,7 @@ class Detail extends Component {
                </div> 
                <div className='service-div'>
                    <div className='detail-img-div'>
-                        <img src={`${service.img}`} alt='service'/>
+                        <img className='detail-img' src={`${service.img}`} alt='service'/>
                    </div>
                    <div className='info-div'>{service.info}</div>
                </div>

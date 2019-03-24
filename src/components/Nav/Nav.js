@@ -5,6 +5,7 @@ import logo from '../Logo/logo.png'
 import axios from 'axios'
 import { connect } from "react-redux";
 import { updateUser, clearUser } from '../../ducks/reducer'
+// import { ToastContainer, toast } from 'react-toastify';
 
 class Nav extends Component {
   constructor() {

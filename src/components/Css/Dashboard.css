@@ -215,6 +215,12 @@ body {
     color: red;
     cursor: pointer;
 }
+/* @media(max-width: 768px) {
+    .cart-btn {
+        bottom: 1;
+        right: 1;
+    }
+} */
 
 .back-btn {
     margin: 10px 10px 10px 10px;
@@ -252,8 +258,8 @@ body {
 .detail-img-div{
     margin-left: 40px;
     margin-top: 20px;
-    height: 300px;
-    /* width: 100px; */
+    /* height: 300px; */
+    /* width: 20%; */
 }
 .info-div{
     margin-top: 20px;
@@ -315,6 +321,16 @@ body {
         /* margin-top: auto; */
         align-items: center;
     }
+}
+/* @media(max-width: 768px) { */
+    .detail-img {
+        height: 270px;
+        width: 270px;
+    }
+/* } */
+
+.toastify__toast--success {
+    background-color: #417cef;
 }
 
 

@@ -43,15 +43,18 @@
 
 
 .review-input{
-    display: flex;
+    display: block;
     justify-content: space-between;
     margin-left: 300px;
     // margin-right: -300px;
 }
-@media (max-width:767px) {
+@media (max-width:768px) {
     .review-input {
         display: block;
-        margin-left: 115px;
+        // margin-left: 115px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center; 
     }
     .review-input textarea {
         margin-left: -120px;
@@ -59,6 +62,9 @@
         border-style: solid;
         border-width: 2px 10px 4px 10px;
         border-color: #F2DBE1;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
     }
 }
 .submit-btn{
@@ -73,10 +79,11 @@
 }
 @media (max-width:768px) {
     .submit-btn {
+        display: block;
         border-style: solid;
         border-width: 2px 10px 4px 10px;
         border-color: #F2DBE1;
-        width: 50%;
+        // width: 50%;
         margin-left: auto;
         margin-right: auto;
         align-items: center;
@@ -115,4 +122,17 @@
 
 .edit-box {
     margin-bottom: 15px;
+}
+.review-text {
+    width: 300px;
+}
+@media(max-width: 768px) {
+    .review-text {
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: #F2DBE1;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center; 
+    }
 }

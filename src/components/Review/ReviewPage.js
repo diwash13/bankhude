@@ -79,7 +79,7 @@ class ReviewPage extends Component {
                             <h3 style={{fontFamily:'cursive', color:'grey', marginTop:20}} >Submit Your Review</h3>
                             <p style={{color:'grey', marginLeft:100, marginRight:50, marginBottom:30}} >Your feedback is highly appreciated and will help us to improve our ability to serve you and other valuable customers.</p>
                             <div className='review-input'>
-                                <textarea style={{width:300}}
+                                <textarea className='review-text'
                                     value={this.state.input}
                                     onChange={e => this.handleInput(e.target.value)}
                                     placeholder='Write your review'

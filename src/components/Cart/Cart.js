@@ -14,6 +14,7 @@ class Cart extends Component {
     };
 
     this.deleteCart = this.deleteCart.bind(this);
+    this.clearCart = this.clearCart.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,14 @@ class Cart extends Component {
         cart: res.data
       });
     });
+  }
+
+  clearCart() {
+    axios.delete(`/api/clearCart/${this.props.id}`).then(res => {
+      this.setState({
+        cart: res.data
+      })
+  }).catch((err) => {console.log(err)})
   }
 
   subTotal = () => {
@@ -66,6 +75,7 @@ class Cart extends Component {
         <h1>Your Service Cart</h1>
         {mappedCart}
         <h5>SubTotal: ${this.subTotal()} </h5>
+        <button className='clear-btn' onClick={() => this.clearCart()}>Clear Cart</button>
           <Checkout />
         {/* <button className='checkout-btn' onClick={() => this.props.history.push('/checkout')}>Checkout</button> */}
         </div> :
@@ -77,7 +87,8 @@ class Cart extends Component {
 }
 const mapStateToProps = reduxState => {
   return {
-    username: reduxState.username
+    username: reduxState.username,
+    id: reduxState.id
   }
 }
 

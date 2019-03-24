@@ -136,8 +136,8 @@ body{
 {
   .left {
     background-size: 120%;
-    height: 20vh;
-    /* width: 40%; */
+    height: 270px;
+    width: 270px;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
@@ -199,22 +199,27 @@ body{
 }
 
 .banks {
-    height: 600px;
-    width: 100%;
+    height: 800px;
+    width: 600px;
 }
 
 @media (max-width:768px) 
 {
   .banks {
-    height: 250px;
-    width: 100%;
-    
+    background-size: 120%;
+    height: 270px;
+    width: 270px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    overflow: hidden;
   }
 }
 
 .about {
     height: 76vh;
-    width: 40%;
+    width: 60%;
     margin-top: 30px;
     font-family: inherit;
     color: grey;
