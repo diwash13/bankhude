@@ -3,11 +3,8 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import Detail from '../Detail/Detail'
 import { connect } from 'react-redux'
-// import { ToastContainer, toast } from 'react-toastify';
-// import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { ToastContainer, toast } from 'react-toastify';
 import Spinner from '../Spinner/Spinner'
-// import alertify from 'alertifyjs'
-import Snackbar from '../Snackbar/Snackbar'
 
 
 class Services extends Component {
@@ -31,7 +28,7 @@ class Services extends Component {
 
     addToCart = (service_id) => {
         if (this.props.username) {
-        axios.post(`/api/cart`,{ service_id:service_id})
+        axios.post(`/api/cart`,{ service_id:service_id}).then(toast.success('Successfully Added to Cart'))
         } else {
             this.props.history.push('/dashboard')
         }
@@ -61,6 +58,9 @@ class Services extends Component {
                     Add
                     </button> 
                     </div>
+                    <Link to={'/cart'}>
+                    <ToastContainer style={{fontSize: 20}} />
+                    </Link>
                 </div>
                 
             )

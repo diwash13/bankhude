@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
 
 class Detail extends Component {
     constructor(props) {
@@ -20,9 +21,8 @@ class Detail extends Component {
     }
 
     addToCart = (service_id) => {
-        console.log(this.props.username)
         if (this.props.username) {
-        axios.post(`/api/cart`,{ service_id:service_id})
+        axios.post(`/api/cart`,{ service_id:service_id}).then(toast.success('Successfully Added to the Cart'))
         
         } else {
             this.props.history.push('/dashboard')
@@ -34,13 +34,13 @@ class Detail extends Component {
         const { service } = this.state
         return (
             
-            <div>
+            <div className='detail-div'>
                <div>
                     <h3 style={{fontFamily:'cursive', color:'grey', fontWeight:'bold', marginTop:15}}>{service.service}</h3>
                </div> 
                <div className='service-div'>
-                   <div className='img-div'>
-                        <img  style={{height:300}}src={`${service.img}`} alt='service'/>
+                   <div className='detail-img-div'>
+                        <img src={`${service.img}`} alt='service'/>
                    </div>
                    <div className='info-div'>{service.info}</div>
                </div>
@@ -53,6 +53,9 @@ class Detail extends Component {
                         <button className='back-btn' onClick={() => this.props.history.goBack()}>Back To Services</button>
                    </div>
                </div>
+               <Link to={'/cart'}>
+               <ToastContainer style={{fontSize: 20}} />
+               </Link>
             </div>
         )
     }

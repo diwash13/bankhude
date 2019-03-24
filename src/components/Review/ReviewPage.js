@@ -70,14 +70,14 @@ class ReviewPage extends Component {
         return (
             <div>
                 <div className='review-div'>
-                    <div className='img-div'>
-                        <img src={Picture} alt='img' />
+                    <div className='review-img-div'>
+                        <img className='review-img' src={Picture} alt='img' />
                     </div>
                     <div>
                         {/* { user === review.username ? ( */}
                         <div className='text'>
                             <h3 style={{fontFamily:'cursive', color:'grey', marginTop:20}} >Submit Your Review</h3>
-                            <p style={{color:'grey', marginLeft:50, marginRight:50, marginBottom:30}} >Your feedback is highly appreciated and will help us to improve our ability to serve you and other valuable customers.</p>
+                            <p style={{color:'grey', marginLeft:100, marginRight:50, marginBottom:30}} >Your feedback is highly appreciated and will help us to improve our ability to serve you and other valuable customers.</p>
                             <div className='review-input'>
                                 <textarea style={{width:300}}
                                     value={this.state.input}

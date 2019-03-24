@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import Logo from '../Logo/logo.png'
 
 class Checkout extends Component {
 
@@ -19,9 +20,9 @@ class Checkout extends Component {
     render() {
         return (
             <StripeCheckout
-                name="Pri Skin Care."
-                description="Payment to Pri Skin Care"
-                image="http://via.placeholder.com/100x100"
+                name="Priyanka Skin Care."
+                description="Payment to Priyanka Skin Care"
+                image={Logo}
                 token= {this.onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
                 amount={Math.round(this.props.total*100)}

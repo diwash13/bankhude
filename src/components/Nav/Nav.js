@@ -49,7 +49,7 @@ class Nav extends Component {
             {!username ? 
           <Link to='/dashboard' style={{marginRight:40, marginTop:20}}>LogIn / Register</Link> :
           <div >
-            <h5>Welcome {username}</h5>
+            <h5>Welcome {username.charAt(0).toUpperCase()+username.substr(1)}</h5>
             <button onClick={this.logout}>Logout</button>
           </div>
           }

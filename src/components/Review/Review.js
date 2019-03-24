@@ -42,7 +42,7 @@ export default class Review extends Component {
                     {user === review.username ? (
                         <Link to={`/review/${review.id}`}>
                             <p>
-                                <strong style={{color:'green'}} >{review.username}</strong>
+                                <strong style={{color:'green'}} >{review.username.charAt(0).toUpperCase()+review.username.substr(1)}</strong>
                             </p>
                         </Link>
                     ) : (

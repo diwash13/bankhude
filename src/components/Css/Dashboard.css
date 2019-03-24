@@ -172,6 +172,7 @@ body {
     /* overflow: auto; */
     /* z-index: -1; */
 }
+
 .card:hover {
     border: 0.04 solid rgba(0,0,0,0,0.2);
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0,0.2)
@@ -248,9 +249,11 @@ body {
 .service-div{
     display: flex
 }
-.img-div{
+.detail-img-div{
     margin-left: 40px;
     margin-top: 20px;
+    height: 300px;
+    /* width: 100px; */
 }
 .info-div{
     margin-top: 20px;
@@ -271,6 +274,47 @@ body {
 }
 .btn-div{
     margin-right: 400px;
+}
+
+@media(max-width: 768px) {
+    .bottom-div {
+        display: block;
+    }
+    .price-div {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+    .btn-div{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+}
+
+@media(max-width: 768px) {
+    .detail-div {
+        display: block;
+    }
+    .service-div {
+        display: block;
+    }
+    .info-div {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-top: auto; */
+        align-items: center;
+    }
+    .detail-img-div {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-top: auto; */
+        align-items: center;
+    }
 }
 
 

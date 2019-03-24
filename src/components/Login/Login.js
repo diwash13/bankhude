@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import axios from "axios"
 import { connect } from "react-redux"
 import { updateUser } from "./../../ducks/reducer"
+import { ToastContainer, toast } from 'react-toastify';
 
 
 class Login extends Component {
@@ -22,7 +23,7 @@ class Login extends Component {
       try {
         let res = await axios.get("/api/current")
         this.props.updateUser(res.data)
-        console.log(res.data)
+        // console.log(res.data)
         this.props.history.push('/private')
       } catch (err) {
       }
@@ -46,7 +47,7 @@ class Login extends Component {
       this.props.updateUser(res.data)
       this.props.history.push("/private")
     } catch (err) {
-      alert("Incorrect username or password")
+      toast.error("Incorrect username or password")
     }
   }
   render() {
@@ -76,6 +77,7 @@ class Login extends Component {
           className='login-btn'
           type='submit'>Login</button>
       </div>
+      <ToastContainer />
       </form>
     )
   }

@@ -3,6 +3,7 @@ import axios from "axios";
 import { updateTotal } from '../../ducks/reducer'
 import { connect } from 'react-redux'
 import './Cart.scss'
+import Checkout from '../Checkout/Checkout'
 
 class Cart extends Component {
   constructor(props) {
@@ -65,7 +66,8 @@ class Cart extends Component {
         <h1>Your Service Cart</h1>
         {mappedCart}
         <h5>SubTotal: ${this.subTotal()} </h5>
-        <button className='checkout-btn' onClick={() => this.props.history.push('/checkout')}>Checkout</button>
+          <Checkout />
+        {/* <button className='checkout-btn' onClick={() => this.props.history.push('/checkout')}>Checkout</button> */}
         </div> :
         <h3>Please login to view your cart</h3>
         }
