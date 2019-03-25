@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { reverse } from 'dns';
+// import { reverse } from 'dns';
 
 export default class Review extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ export default class Review extends Component {
 
     setEdit() {
         this.setState({
-            editing: true,
+            editing: true
         })
     }
 

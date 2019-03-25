@@ -15,6 +15,7 @@ body {
     height: 100vh;
     width: 100%;
     background-image: url("http://product.vnailpro.com/wp-content/uploads/2018/07/Facial-Waxing-1.png");
+    background-size: cover;
 }
 
 @media (max-width:768px) {
@@ -128,6 +129,7 @@ body {
 }
 
 .input {
+    padding: 10px;
     height: 35px;
     width: 200px;
     font-size: 25px;
@@ -246,7 +248,7 @@ body {
     flex-wrap: wrap;
 }
 .service-card {
-    border: 2px solid aqua;
+    /* border: 2px solid aqua; */
     width: 100vw;
     /* height: 100vw; */
 }
