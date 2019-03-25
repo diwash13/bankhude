@@ -76,7 +76,8 @@ class Cart extends Component {
         {mappedCart}
         <h5>SubTotal: ${this.subTotal()} </h5>
         <button className='clear-btn' onClick={() => this.clearCart()}>Clear Cart</button>
-          <Checkout />
+        {this.subTotal() != 0.00 ?
+          <Checkout /> : null }
         {/* <button className='checkout-btn' onClick={() => this.props.history.push('/checkout')}>Checkout</button> */}
         </div> :
         <h3>Please login to view your cart</h3>

@@ -3,6 +3,7 @@ import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import Logo from '../Logo/logo.png'
+import { toast } from 'react-toastify';
 
 class Checkout extends Component {
 
@@ -11,7 +12,7 @@ class Checkout extends Component {
         axios.post('/api/payment', {token, amount:Math.round(this.props.total*100)}).then(res => {
             console.log(res)
             axios.delete(`/api/clearCart/${this.props.id}`).then(res => {
-                console.log('yay')
+                window.location.reload()
             }).catch((err) => {console.log(err)})
         })
     }
