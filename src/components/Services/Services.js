@@ -28,7 +28,7 @@ class Services extends Component {
 
     addToCart = (service_id) => {
         if (this.props.username) {
-        axios.post(`/api/cart`,{ service_id:service_id}).then(toast.success('Successfully Added to Cart'))
+        axios.post(`/api/cart`,{ service_id:service_id}).then(toast.info('Successfully Added to Cart'))
         } else {
             this.props.history.push('/dashboard')
         }
@@ -54,7 +54,6 @@ class Services extends Component {
                     </div>
                     </Link>
                     <button className='cart-btn'onClick={() => this.addToCart(service.service_id)}>
-                    {/* <Snackbar /> */}
                     Add
                     </button> 
                     </div>

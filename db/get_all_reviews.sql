@@ -3,3 +3,4 @@ from reviews
 join users
 on reviews.user_id = users.id
 order by reviews.id asc
+-- order by last_updated asc

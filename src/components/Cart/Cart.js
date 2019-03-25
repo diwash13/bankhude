@@ -36,7 +36,7 @@ class Cart extends Component {
   clearCart() {
     axios.delete(`/api/clearCart/${this.props.id}`).then(res => {
       this.setState({
-        cart: res.data
+        cart: []
       })
   }).catch((err) => {console.log(err)})
   }
@@ -75,7 +75,8 @@ class Cart extends Component {
         <h1>Your Service Cart</h1>
         {mappedCart}
         <h5>SubTotal: ${this.subTotal()} </h5>
-        <button className='clear-btn' onClick={() => this.clearCart()}>Clear Cart</button>
+        {this.subTotal() != 0.00 ?
+        <button className='clear-btn' onClick={() => this.clearCart()}>Clear Cart</button> : null }
         {this.subTotal() != 0.00 ?
           <Checkout /> : null }
         {/* <button className='checkout-btn' onClick={() => this.props.history.push('/checkout')}>Checkout</button> */}

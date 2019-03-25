@@ -41,6 +41,13 @@ body{
   font-family: cursive;
   color: grey;
 }
+.subnav button {
+  background-color: #EFD5E0;
+  color: #1D61B7;
+}
+.subnav button:hover {
+  cursor: pointer;
+}
 .button {
   margin-right: 40px;
   margin-top: 20px;
@@ -209,7 +216,7 @@ body{
     background-size: 120%;
     height: 270px;
     width: 270px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
@@ -227,6 +234,7 @@ body{
 @media (max-width:768px) {
   .about {
     width: 100%;
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
     align-items: center;

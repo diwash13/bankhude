@@ -41,7 +41,7 @@ module.exports = {
     },
 
     clearCart: (req, res) => {
-        console.log('hit')
+        // console.log('hit')
         const db = req.app.get('db')
         const { id } = req.params
         const user_id = id

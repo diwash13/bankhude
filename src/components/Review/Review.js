@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-// import { reverse } from 'dns';
 
 export default class Review extends Component {
     constructor(props) {
@@ -47,13 +46,13 @@ export default class Review extends Component {
                         </Link>
                     ) : (
                         <p>
-                            <strong style={{color:'grey'}}>{review.username}</strong>
+                            <strong style={{color:'grey'}}>{review.username.charAt(0).toUpperCase()+review.username.substr(1)}</strong>
                         </p>
                     )}
                     {this.state.editing ? (
                         <input className='edit-box'
                             type='text'
-                            value={this.state.review}
+                            value={this.state.review ? this.state.review : review.review}
                             onChange={e => this.handleReview(e.target.value)}
                         />
                     ) : (

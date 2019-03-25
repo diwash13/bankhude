@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import Logo from '../Logo/logo.png'
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 class Checkout extends Component {
 
