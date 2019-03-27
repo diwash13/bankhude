@@ -147,7 +147,9 @@ body{
     width: 270px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     align-items: center;
+    background-size: cover;
   }
 }
 
