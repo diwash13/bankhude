@@ -27,7 +27,7 @@ class Dashboard extends Component {
             <div className='left-body'></div>
         <div className='right-body'>
         <div className="box-controller">
-       <div
+          <div
          className={"controller " + (this.state.isLoginOpen
             ? "selected-controller"
             : "")}
@@ -36,8 +36,8 @@ class Dashboard extends Component {
                 .bind(this)}>
          Login
                 {this.state.isLoginOpen && <Login history={this.props.history}/>}
-       </div>
-       <div
+          </div>
+          <div
          className={"controller " + (this.state.isRegisterOpen
             ? "selected-controller"
             : "")}
@@ -45,7 +45,7 @@ class Dashboard extends Component {
                 .showRegisterBox
                 .bind(this)}>
          Register
-       </div>
+          </div>
      </div>
                 {this.state.isRegisterOpen && <Register history={this.props.history}/>}
      </div>

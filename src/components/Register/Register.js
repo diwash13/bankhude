@@ -2,10 +2,11 @@ import React, { Component } from "react"
 import axios from "axios"
 import { connect } from "react-redux"
 import { updateUser } from "./../../ducks/reducer"
+import { ToastContainer, toast } from 'react-toastify';
 // import '../Css/Dashboard.css'
 
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -51,11 +52,16 @@ class Login extends Component {
       phone: this.state.phone
     }
     try {
+      const { username, password, first_name, last_name, email, phone } = this.state
+            if(username && password && first_name, last_name, email, phone) {
       let res = await axios.post("/auth/register", user)
       this.props.updateUser(res.data)
       this.props.history.push("/private")
+            } else {
+              toast.error('Please fill out the registration form')
+            }
     } catch (err) {
-      alert("Choose a unique username")
+      toast.error("Choose a unique username")
     }
   }
   render() {
@@ -105,6 +111,7 @@ class Login extends Component {
           className='login-btn'
           onClick={this.register}>Register</button>
       </div>
+      <ToastContainer />
       </div>
     )
   }
@@ -121,4 +128,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Login)
+)(Register)
